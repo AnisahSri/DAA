@@ -1,0 +1,17 @@
+@startuml pert2
+left to right direction
+
+actor Mahasiswa
+actor Dosen 
+
+package Classroom {
+    usecase "Memilih Kelas" as U1
+    usecase "Memilih Jadwal" as U1
+    usecase "Mengajar" as U2
+    usecase ""
+
+}
+
+Mahasiswa --> U1 
+Dosen --> U2
+@enduml

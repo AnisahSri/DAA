@@ -1,0 +1,25 @@
+@startuml
+start
+:Admin membuka aplikasi;
+if (Login berhasil?) then (Ya)
+  :Admin masuk ke dashboard;
+  if (Pilih menu Kelola Pelanggan?) then (Ya)
+    :Tampilkan daftar pelanggan;
+    if (Pilih operasi?) then (Tambah/Edit/Hapus)
+      if (Tambah Pelanggan?) then (Ya)
+        :Form Tambah Pelanggan;
+        :Simpan data pelanggan ke tabel customers;
+        note right: Menggunakan CustomerFactory\nuntuk generate data pelanggan.
+      else if (Edit Pelanggan?) then (Ya)
+        :Form Edit Pelanggan;
+        :Update data pelanggan di tabel customers;
+      else if (Hapus Pelanggan?) then (Ya)
+        :Hapus data pelanggan dari tabel customers;
+      endif
+    endif
+  endif
+else (Tidak)
+  :Tampilkan pesan kesalahan login;
+endif
+stop
+@enduml
